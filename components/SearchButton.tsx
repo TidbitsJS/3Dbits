@@ -29,6 +29,8 @@ const SearchButton = () => {
       </SearchButtonWrapper>
     )
   }
+
+  return null
 }
 
 export default SearchButton

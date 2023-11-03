@@ -1,5 +1,5 @@
 import Link from '@/components/Link'
-import Tag from '@/components/Tag'
+import { Chevron } from '@/components/social-icons/icons'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 
@@ -17,20 +17,25 @@ export default function Home({ posts }) {
             {siteMetadata.description}
           </p>
         </div>
-        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+        <ul className="my-6 space-y-6 pt-6">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((post) => {
-            const { slug, date, title, summary, tags } = post
+            const { slug, date, title, summary } = post
             return (
-              <li key={slug} className="py-12">
-                <article>
-                  <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-                    <dl>
-                      <dt className="sr-only">Published on</dt>
-                      <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                        <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
-                      </dd>
-                    </dl>
+              <li
+                key={slug}
+                className="group relative w-full transform py-4 transition-all duration-500  hover:duration-500"
+              >
+                <div className="absolute -inset-x-5 inset-y-0 z-0 scale-95 bg-zinc-50 px-6 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:rounded-2xl"></div>
+                <article className="relative z-10">
+                  <div className="flex flex-col space-y-2">
+                    <time
+                      className="relative z-10 order-first mb-2 flex items-center text-sm text-zinc-400 dark:text-zinc-500"
+                      dateTime={date}
+                    >
+                      <span className="pr-2 text-base">☕️ </span>
+                      {formatDate(date, siteMetadata.locale)}
+                    </time>
                     <div className="space-y-5 xl:col-span-3">
                       <div className="space-y-6">
                         <div>
@@ -42,11 +47,6 @@ export default function Home({ posts }) {
                               {title}
                             </Link>
                           </h2>
-                          <div className="flex flex-wrap">
-                            {tags.map((tag) => (
-                              <Tag key={tag} text={tag} />
-                            ))}
-                          </div>
                         </div>
                         <div className="prose max-w-none text-gray-500 dark:text-gray-400">
                           {summary}
@@ -55,10 +55,11 @@ export default function Home({ posts }) {
                       <div className="text-base font-medium leading-6">
                         <Link
                           href={`/blog/${slug}`}
-                          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                          className="flex items-center text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                           aria-label={`Read "${title}"`}
                         >
-                          Read more &rarr;
+                          Read more
+                          <Chevron />
                         </Link>
                       </div>
                     </div>
@@ -73,10 +74,11 @@ export default function Home({ posts }) {
         <div className="flex justify-end text-base font-medium leading-6">
           <Link
             href="/blog"
-            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+            className="flex items-center text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
             aria-label="All posts"
           >
-            All Posts &rarr;
+            All Posts
+            <Chevron />
           </Link>
         </div>
       )}
