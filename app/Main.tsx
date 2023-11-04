@@ -1,8 +1,8 @@
 import Link from '@/components/Link'
-import MainCanvas from '@/components/models/MainCanvas'
-import { Chevron } from '@/components/social-icons/icons'
 import siteMetadata from '@/data/siteMetadata'
+import MainCanvas from '@/components/MainCanvas'
 import { formatDate } from 'pliny/utils/formatDate'
+import { Chevron } from '@/components/social-icons/icons'
 
 const MAX_DISPLAY = 5
 
@@ -10,8 +10,6 @@ export default function Home({ posts }) {
   return (
     <>
       <div>
-        <MainCanvas />
-
         <div className="space-y-2 pb-8 pt-6 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Latest
@@ -20,6 +18,9 @@ export default function Home({ posts }) {
             {siteMetadata.description}
           </p>
         </div>
+
+        <MainCanvas />
+
         <ul className="my-6 space-y-6 pt-6">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((post) => {

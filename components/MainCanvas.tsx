@@ -1,11 +1,10 @@
 'use client'
 
-import { OrbitControls } from '@react-three/drei'
-import { Canvas } from '@react-three/fiber'
 import { Suspense } from 'react'
-import { FloatingText } from './FloatingText'
-import { Study } from './Study'
-import { SwordsMan } from './SwordsMan'
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
+
+import { Study } from './models/Study'
 
 export default function MainCanvas() {
   return (
@@ -21,10 +20,8 @@ export default function MainCanvas() {
         maxPolarAngle={Math.PI / 2} // Restrict camera to move only in the y-direction
         minPolarAngle={Math.PI / 2}
       />
-      {/* <FloatingText position={[0, 3, 0]} text="Hello" /> */}
       <Suspense fallback={null}>
-        {/* <SwordsMan scale={[2, 2, 2]} position={[5, -2, 1]} rotation={[0, -1, 0]} /> */}
-        <Study scale={[0.8, 0.8, 0.8]} position={[0, -1, 0]} />
+        <Study scale={[0.85, 0.85, 0.85]} position={[0, -1.2, 0]} />
       </Suspense>
     </Canvas>
   )
