@@ -11,3 +11,5 @@ export function Study(props) {
     </mesh>
   )
 }
+
+useGLTF.preload('/3d/study/scene.gltf')
