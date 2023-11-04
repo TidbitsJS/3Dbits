@@ -1,0 +1,11 @@
+Model Information:
+* title:	Study At Night
+* source:	https://sketchfab.com/3d-models/study-at-night-a2e9244afe754453970b4f549ddc416a
+* author:	Wordofcurse (https://sketchfab.com/Wordofcurse)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Study At Night" (https://sketchfab.com/3d-models/study-at-night-a2e9244afe754453970b4f549ddc416a) by Wordofcurse (https://sketchfab.com/Wordofcurse) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
